@@ -1,0 +1,38 @@
+<h1>Home</h1>
+
+<!-- No templates provided, will use default layout -->
+<h2>No template</h2>
+<app-table [data]="employees"></app-table>
+
+
+ <!-- Basic configured template -->
+<h2>Basic template</h2>
+<app-table [data]="employees">
+  <ng-template #headers>
+    <th>First</th>
+    <th>Last</th>
+  </ng-template>
+</app-table>
+
+ <!-- Highly configured template with conditional elements -->
+<h2>High template</h2>
+<app-table [data]="employees">
+  <ng-template #headers>
+    <th>First</th>
+    <th>Last</th>
+    <th></th>
+    <th></th>
+  </ng-template>
+  <ng-template #rows let-row>
+    <td>{{row?.firstName}}</td>
+    <td>{{row?.lastName}}</td>
+    <td>
+      <button *ngIf="row?.lastName" (click)="purchaseItem(row?.firstName)">
+        Buy now
+      </button>
+    </td>
+    <td>
+      <button>Delete</button>
+    </td>
+  </ng-template>
+</app-table>

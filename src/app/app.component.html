@@ -1,0 +1,34 @@
+<!-- <p>you can see me</p> -->
+<!-- <p *ngIf="false; else myTemplate">you can see me</p> -->
+
+<!-- <ng-template #myTemplate>
+  <p>
+    you can´t see me
+  </p>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container> -->
+
+<!-- MORE COMPLEX EXAMPLE: -->
+
+<!-- <ng-template #myTemplate let-greeting let-message="message">
+  <p>
+    {{ greeting }} {{ message }}
+  </p>
+</ng-template>
+
+<ng-container
+  *ngTemplateOutlet="
+    myTemplate;
+    context: { $implicit: 'Hi', message: 'Luis' }
+  "
+></ng-container>
+
+<ng-container
+  *ngTemplateOutlet="
+    myTemplate;
+    context: { $implicit: 'Hey', message: 'subscribe!' }
+  "
+></ng-container> -->
+
+<router-outlet></router-outlet>
